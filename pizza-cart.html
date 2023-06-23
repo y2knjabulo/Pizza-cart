@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Pizza</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Perfect Pizza</h1>
+        
+       <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Order Online</a></li>
+            </ul>
+            <p>Contact Us @011 565 3456
+                Y2knjabulo00@gmail.com. Home address Soweto, orlando</p>
+        </nav>
+        
+        
+    </header>
+    <main>
+
+        <section class="hero-image">
+            <h2>Welcome to Perfect Pizza</h2>
+            <p>Enjoy the taste of our delicious, freshly baked pizzas. Order online or visit us today!</p>
+        </section>
+        <section class="pizza menu">
+          
+            <h2>Our Menu</h2>
+
+            <div class="pizzas">
+              <div class="pizza menu-itemsmall">
+                <img src="images/pizza one.PNG.png" width="75">
+                <h3>BBQ Small Pizza</h3>
+                <p>Tomato sauce, mozzarella cheese, fresh basil</p>
+                <span>R29</span>
+            </div> 
+
+            <div class="pizza menu-itemmedium">
+                <img src="images/pizza one.PNG.png"width="100">
+                <h3>Pepperoni Medium Pizza</h3>
+                <p>Tomato sauce, mozzarella cheese, pepperoni</p>
+                <span>R79</span>
+                </div>
+
+                <div class="pizza menu-itemslarge">
+                    <img src="images/pizza one.PNG.png"width="125">
+                    <h3> Margherita Large Pizza</h3>
+                    <p>BBQsauce, mozzarella cheese, Beef</p>
+                    <span>R134</span></div>
+
+          </div>
+          <div x-data="pizzaPamphlet()">
+            <h1>Pizza Perfect</h1>
+           
+            <div x-show="cart.length > 0">
+                <h2>Your Cart:</h2>
+                <ul>
+                    <template x-for="(pizza, index) in cart">
+                        <li>
+                            <span x-text="pizza.size"></span>
+                            <div class="counter">
+                            <button @click="removeFromCart(pizza)">-</button>
+                            <span x-text="pizza.quantity"></span>
+                            <button @click="addToCart(pizza.size)">+</button>
+                            </div>
+                            
+                        </li>
+                    </template>
+                </ul>
+               
+                <h3>Totals:</h3>
+                <ul>
+                    <li>BBQ Small Pizza: <span x-text="totals.small"></span></li>
+                    <li>Pepperoni Medium Pizza: <span x-text="totals.medium"></span></li>
+                    <li>Margherita Large Pizza: <span x-text="totals.large"></span></li>
+                    <li>Total Cost: <span x-text="totals.total"></span></li>
+                </ul>
+               
+                <button x-show="cart.length > 0" @click="checkout">Checkout</button>
+            </div>
+           
+            <div x-show="cart.length === 0">
+                <h2>No items in cart.</h2>
+            </div>
+           
+            <h2>Available Pizzas:</h2>
+            <button @click="addToCart('small')">Add BBQ Small Pizza</button>
+            <button @click="addToCart('medium')">Add Pepperoni Medium Pizza</button>
+            <button @click="addToCart('large')">Add Margherita Large Pizza</button>
+        </div>
+
+</body>
+</html>

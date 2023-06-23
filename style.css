@@ -1,0 +1,63 @@
+body{
+    background-color:#09440e;
+    font-family: 'Open Sans', sans-serif; 
+}
+ 
+
+
+.pizza {
+    margin: 5em; 
+    padding: 1em; 
+    border: 1px solid #496E4C;
+    border-radius:1.5em;
+    margin-bottom:0.5em;
+    /*display:inline-block;*/
+}
+.menu-itemsmall {
+    background-color:#09440e;
+    
+}
+
+.cart {
+  padding:20px;
+  border: 1px solid #ccc
+}
+
+.cart h2 {
+  margin-bottom: 10px;
+}
+
+.cart button {
+  margin-top: 10px;
+}
+.menu-itemmedium {
+    background-color:rgba(128, 20, 20, 0.849);
+   
+}
+
+.menu-itemslarge {
+  background-color:rgb(102, 101, 17);
+    
+}
+
+.menu {
+    background-color:rgba(133, 83, 10, 0.904);
+    
+}
+
+@media (min-width:760px) {
+  body {
+    background-color:#09440e;
+  }
+  }
+
+  @media (min-width:960px) {
+    body {
+      background-color:#ca6702;
+    }
+
+    .pizzas {
+      display:flex;
+    
+    }
+    }
