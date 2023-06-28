@@ -21,9 +21,13 @@ function pizzaPamphlet() {
             this.updateTotals();
         },
         removeFromCart(pizza) {
-            let index = this.cart.indexOf(pizza);
-            this.cart.splice(index, 1);
-           
+            if (pizza.quantity > 1) {
+                pizza.quantity--;
+            } else {
+                let index = this.cart.indexOf(pizza);
+                this.cart.splice(index, 1);
+            }
+
             this.updateTotals();
         },
         

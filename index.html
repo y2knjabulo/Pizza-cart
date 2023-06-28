@@ -57,7 +57,7 @@
 
           </div>
           <div x-data="pizzaPamphlet()">
-            <h1>Pizza Perfect</h1>
+            <h1>Perfect Pizza</h1>
            
             <div x-show="cart.length > 0">
                 <h2>Your Cart:</h2>
@@ -77,10 +77,10 @@
                
                 <h3>Totals:</h3>
                 <ul>
-                    <li>BBQ Small Pizza: <span x-text="totals.small"></span></li>
-                    <li>Pepperoni Medium Pizza: <span x-text="totals.medium"></span></li>
-                    <li>Margherita Large Pizza: <span x-text="totals.large"></span></li>
-                    <li>Total Cost: <span x-text="totals.total"></span></li>
+                    <li>BBQ Small Pizza:R29 <span x-text="totals.small"></span></li>
+                    <li>Pepperoni Medium Pizza:R79 <span x-text="totals.medium"></span></li>
+                    <li>Margherita Large Pizza:R134 <span x-text="totals.large"></span></li>
+                    <li>Total Cost:R<span x-text="totals.total"></span></li>
                 </ul>
                
                 <button x-show="cart.length > 0" @click="checkout">Checkout</button>
