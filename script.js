@@ -2,9 +2,9 @@ function pizzaPamphlet() {
     return {
         cart: [],
         totals: {
-            BBQSmallPizza: 0,
-            PepperoniMediumPizza: 0,
-            MargheritaLargePizza: 0,
+            small: 0,
+            medium: 0,
+            large: 0,
             total: 0
         },
         addToCart(size) {
@@ -33,27 +33,27 @@ function pizzaPamphlet() {
         
         updateTotals() {
             this.totals = {
-                BBQSmallPizza: 0,
-                PepperoniMediumPizza: 0,
-                MargheritaLargePizza: 0,
+                small: 0,
+                medium: 0,
+                large: 0,
                 total: 0
             };
            
             for (let pizza of this.cart) {
                 switch (pizza.size) {
                     case 'small':
-                        this.totals.BBQSmallPizza += pizza.quantity;
+                        this.totals.small += pizza.quantity;
                         break;
                     case 'medium':
-                        this.totals.PepperoniMediumPizza += pizza.quantity;
+                        this.totals.medium += pizza.quantity;
                         break;
                     case 'large':
-                        this.totals.MargheritaLargePizza += pizza.quantity;
+                        this.totals.large += pizza.quantity;
                         break;
                 }
             }
            
-            this.totals.total = this.totals.BBQSmallPizza * 29 + this.totals.PepperoniMediumPizza * 79 + this.totals.MargheritaLargePizza * 134;
+            this.totals.total = this.totals.small * 29 + this.totals.medium * 79 + this.totals.large * 134;
         },
         checkout() {
             let paymentAmount = prompt("Enter the payment amount:");
@@ -68,3 +68,4 @@ function pizzaPamphlet() {
         }
     };
 }
+
